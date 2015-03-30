@@ -28,6 +28,7 @@ Plugin 'vim-scripts/DoxygenToolkit.vim'
 Plugin 'fholgado/minibufexpl.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'Shougo/neocomplcache.vim'
+Plugin 'Raimondi/delimitMate'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
