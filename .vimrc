@@ -13,9 +13,7 @@ Plugin 'tomasr/molokai'
 Plugin 'majutsushi/tagbar'
 Plugin 'bling/vim-airline'
 Plugin 'kien/ctrlp.vim'
-Plugin 'Yggdroot/indentLine'
 Plugin 'vimwiki/vimwiki'
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-fugitive'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'vim-scripts/a.vim'
@@ -27,8 +25,8 @@ Plugin 'honza/vim-snippets'
 Plugin 'vim-scripts/DoxygenToolkit.vim'
 Plugin 'fholgado/minibufexpl.vim'
 Plugin 'tpope/vim-surround'
-Plugin 'Shougo/neocomplcache.vim'
 Plugin 'Raimondi/delimitMate'
+Plugin 'Valloric/YouCompleteMe'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -51,7 +49,7 @@ set nowrap
 colorscheme molokai
 let g:molokai_original=1
 
-set guifont=Monospace\ 11
+set guifont=Envy\ Code\ R\ 11
 
 "Toggle Menu and Toolbar
 set guioptions-=m
@@ -84,6 +82,8 @@ filetype on
 filetype indent on
 filetype plugin on
 filetype plugin indent on
+
+set cmdheight=3
 
 "tagbar
 nmap <Leader>tb :TagbarToggle<CR>
@@ -135,3 +135,9 @@ set whichwrap+=<,>,h,l
 set showmatch
 set wildmenu
 set showcmd
+
+" Trigger configuration. Do not use <tab> if you use
+" https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<c-g>"
+let g:UltiSnipsJumpForwardTrigger="<c-f>"
+let g:UltiSnipsJumpBackwardTrigger="<c-b>"
