@@ -8,10 +8,9 @@ call vundle#begin()
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'tomasr/molokai'
 Plugin 'majutsushi/tagbar'
-Plugin 'bling/vim-airline'
 Plugin 'kien/ctrlp.vim'
 Plugin 'vimwiki/vimwiki'
 Plugin 'tpope/vim-fugitive'
@@ -23,10 +22,15 @@ Plugin 'vim-scripts/mru.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'vim-scripts/DoxygenToolkit.vim'
-Plugin 'fholgado/minibufexpl.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'Raimondi/delimitMate'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'vim-airline/vim-airline'
+Plugin 'easymotion/vim-easymotion'
+
+if exists('$TMUX')
+      set term=screen-256color
+endif
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -39,7 +43,7 @@ set fileencodings=utf-8,gbk,gb18030,utf-16,big
 
 syntax enable
 
-"
+" syntax highlighting
 syntax on
 
 "nowrap
@@ -83,9 +87,10 @@ filetype indent on
 filetype plugin on
 filetype plugin indent on
 
-set cmdheight=3
+set cmdheight=1
 
 "tagbar
+autocmd VimEnter * nested :call tagbar#autoopen(1)
 nmap <Leader>tb :TagbarToggle<CR>
 let g:tagbar_ctags_bin='ctags'
 let g:tagbar_width=30
@@ -136,8 +141,16 @@ set showmatch
 set wildmenu
 set showcmd
 
+" airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+set laststatus=2
+
 " Trigger configuration. Do not use <tab> if you use
 " https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<c-g>"
 let g:UltiSnipsJumpForwardTrigger="<c-f>"
 let g:UltiSnipsJumpBackwardTrigger="<c-b>"
+
+map <Leader>n :bn<cr>
+map <Leader>p :bp<cr>
