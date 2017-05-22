@@ -1,40 +1,62 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+"dein Scripts-----------------------------
+if &compatible
+  set nocompatible               " Be iMproved
+endif
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+" Required:
+set runtimepath+=/Users/phonzia/.vim/repos/github.com/Shougo/dein.vim
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'tomasr/molokai'
-Plugin 'majutsushi/tagbar'
-Plugin 'kien/ctrlp.vim'
-Plugin 'vimwiki/vimwiki'
-Plugin 'tpope/vim-fugitive'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'vim-scripts/a.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'vim-scripts/CmdlineComplete'
-Plugin 'vim-scripts/mru.vim'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-Plugin 'vim-scripts/DoxygenToolkit.vim'
-Plugin 'tpope/vim-surround'
-Plugin 'Raimondi/delimitMate'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'vim-airline/vim-airline'
-Plugin 'easymotion/vim-easymotion'
+" Required:
+call dein#begin('/Users/phonzia/.vim')
+
+" Let dein manage dein
+" Required:
+call dein#add('Shougo/dein.vim')
+
+" Add or remove your plugins here:
+call dein#add('Shougo/neosnippet.vim')
+call dein#add('Shougo/neosnippet-snippets')
+call dein#add('VundleVim/Vundle.vim')
+call dein#add('tomasr/molokai')
+call dein#add('majutsushi/tagbar')
+call dein#add('kien/ctrlp.vim')
+call dein#add('vimwiki/vimwiki')
+call dein#add('tpope/vim-fugitive')
+call dein#add('terryma/vim-multiple-cursors')
+call dein#add('vim-scripts/a.vim')
+call dein#add('scrooloose/nerdtree')
+call dein#add('vim-scripts/CmdlineComplete')
+call dein#add('vim-scripts/mru.vim')
+call dein#add('vim-scripts/DoxygenToolkit.vim')
+call dein#add('tpope/vim-surround')
+call dein#add('Raimondi/delimitMate')
+"call dein#add('Valloric/YouCompleteMe')
+call dein#add('vim-airline/vim-airline')
+call dein#add('easymotion/vim-easymotion')
+"call dein#add('rdnetto/YCM-Generator')
+call dein#add('fatih/vim-go')
+call dein#add('fholgado/minibufexpl.vim')
+call dein#add('amix/open_file_under_cursor.vim')
+call dein#add('mattn/emmet-vim')
+
+" Required:
+call dein#end()
+
+" Required:
+filetype plugin indent on
+syntax enable
+
+" If you want to install not installed plugins on startup.
+if dein#check_install()
+  call dein#install()
+endif
+
+"End dein Scripts-------------------------
+filetype plugin indent on    " required
 
 if exists('$TMUX')
       set term=screen-256color
 endif
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
 
 let mapleader=","
 "encode
@@ -53,7 +75,7 @@ set nowrap
 colorscheme molokai
 let g:molokai_original=1
 
-set guifont=Envy\ Code\ R\ 11
+set guifont=Monofur\ for\ Powerline:h14
 
 "Toggle Menu and Toolbar
 set guioptions-=m
@@ -117,6 +139,9 @@ function FoldBrace()
     if getline(v:lnum+1)[0] == '{'
         return 1
     endif
+    if getline(v:lnum+1)[-1] == '{'
+        return 1
+    endif
     if getline(v:lnum) =~ '{'
         return 1
     endif
@@ -128,7 +153,7 @@ endfunction
 
 set foldlevel=100
 set foldexpr=FoldBrace()
-set foldmethod=syntax
+set foldmethod=expr
 set foldenable
 
 nmap <space> za
@@ -151,6 +176,3 @@ set laststatus=2
 let g:UltiSnipsExpandTrigger="<c-g>"
 let g:UltiSnipsJumpForwardTrigger="<c-f>"
 let g:UltiSnipsJumpBackwardTrigger="<c-b>"
-
-map <Leader>n :bn<cr>
-map <Leader>p :bp<cr>
