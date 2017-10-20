@@ -4,10 +4,10 @@ if &compatible
 endif
 
 " Required:
-set runtimepath+=/Users/phonzia/.vim/repos/github.com/Shougo/dein.vim
+set runtimepath+=/Users/dx2880/.vim/repos/github.com/Shougo/dein.vim
 
 " Required:
-call dein#begin('/Users/phonzia/.vim')
+call dein#begin('/Users/dx2880/.vim')
 
 " Let dein manage dein
 " Required:
@@ -30,14 +30,12 @@ call dein#add('vim-scripts/mru.vim')
 call dein#add('vim-scripts/DoxygenToolkit.vim')
 call dein#add('tpope/vim-surround')
 call dein#add('Raimondi/delimitMate')
-"call dein#add('Valloric/YouCompleteMe')
 call dein#add('vim-airline/vim-airline')
 call dein#add('easymotion/vim-easymotion')
-"call dein#add('rdnetto/YCM-Generator')
 call dein#add('fatih/vim-go')
-call dein#add('fholgado/minibufexpl.vim')
 call dein#add('amix/open_file_under_cursor.vim')
 call dein#add('mattn/emmet-vim')
+call dein#add('morhetz/gruvbox')
 
 " Required:
 call dein#end()
@@ -72,7 +70,7 @@ syntax on
 set nowrap
 
 "
-colorscheme molokai
+colorscheme gruvbox
 let g:molokai_original=1
 
 set guifont=Monofur\ for\ Powerline:h14
