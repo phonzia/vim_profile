@@ -70,7 +70,7 @@ syntax on
 set nowrap
 
 "
-colorscheme gruvbox
+colorscheme molokai
 let g:molokai_original=1
 
 set guifont=Monofur\ for\ Powerline:h14
@@ -174,3 +174,8 @@ set laststatus=2
 let g:UltiSnipsExpandTrigger="<c-g>"
 let g:UltiSnipsJumpForwardTrigger="<c-f>"
 let g:UltiSnipsJumpBackwardTrigger="<c-b>"
+
+" jump to where file exit
+au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
+
+set cst
