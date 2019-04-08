@@ -19,3 +19,6 @@
 [submodule "pack/plugins/start/indentLine"]
 	path = pack/plugins/start/indentLine
 	url = https://github.com/Yggdroot/indentLine.git
+[submodule "pack/plugins/start/vim-go"]
+	path = pack/plugins/start/vim-go
+	url = https://github.com/fatih/vim-go.git
