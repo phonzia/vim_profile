@@ -1,0 +1,18 @@
+[submodule "pack/plugins/start/tagbar"]
+	path = pack/plugins/start/tagbar
+	url = https://github.com/majutsushi/tagbar.git
+[submodule "pack/plugins/start/molokai"]
+	path = pack/plugins/start/molokai
+	url = https://github.com/tomasr/molokai.git
+[submodule "pack/plugins/start/nerdtree"]
+	path = pack/plugins/start/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "pack/plugins/start/vim-multiple-cursors"]
+	path = pack/plugins/start/vim-multiple-cursors
+	url = https://github.com/terryma/vim-multiple-cursors.git
+[submodule "pack/plugins/start/mru"]
+	path = pack/plugins/start/mru
+	url = https://github.com/vim-scripts/mru.vim.git
+[submodule "pack/plugins/start/airline"]
+	path = pack/plugins/start/airline
+	url = https://github.com/vim-airline/vim-airline.git

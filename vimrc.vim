@@ -1,0 +1,1 @@
+pack/plugins/start/vimrc/plugin/vimrc.vim
