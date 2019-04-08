@@ -63,6 +63,9 @@ set showcmd
 " jump to where file exit
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 
+" make && quickfix
+:command -nargs=* Make silent make | cwindow 9
+
 """"""""""""""""""""""""""" Key Mapping Start From Here""""""""""
 " Remap VIM 0 to first non-blank character
 map 0 ^
@@ -78,3 +81,13 @@ nmap <C-k> <C-w>k
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 set laststatus=2
+
+" tagbar
+autocmd VimEnter * nested :call tagbar#autoopen(1)
+nmap <Leader>tb :TagbarToggle<CR>
+let g:tagbar_ctags_bin='ctags'
+let g:tagbar_width=30
+autocmd BufReadPost *.cpp,*.c,*.h,*.hpp,*.cc,*.cxx TagbarOpen
+
+" indentLine
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
