@@ -38,7 +38,7 @@ set guifont=Fira\ Code:h13
 set guioptions-=m
 set guioptions-=T
 set guioptions-=r
-set guioptions-=l
+set guioptions-=L
 
 "indent setting
 set tabstop=4
@@ -84,9 +84,9 @@ nmap <C-k> <C-w>k
 
 """""""""""""""""""""""""""" Plugin Setting Start From Here""""""""
 " airline
-let g:airline#extensions#tabline#enabled=1
-let g:airline_powerline_fonts=1
-set laststatus=2
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
 
 " tagbar
 autocmd VimEnter * nested :call tagbar#autoopen(1)
@@ -116,3 +116,8 @@ let g:cpp_member_variable_highlight = 1
 let g:cpp_class_decl_highlight = 1
 let g:cpp_experimental_simple_template_highlight = 1
 let g:cpp_experimental_template_highlight = 1
+
+" vim-rooter
+let g:rooter_resolve_links = 1
+let g:rooter_change_directory_for_non_project_files = 'current'
+let g:rooter_patterns = ['Makefile', 'makefile', 'MAKEFILE', '.git', '.git/', '_darcs/', '.hg/', '.bzr/', '.svn/']
