@@ -37,3 +37,12 @@
 [submodule "pack/plugins/start/YouCompleteMe"]
 	path = pack/plugins/start/YouCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe.git
+[submodule "pack/plugins/start/YCM-Generator"]
+	path = pack/plugins/start/YCM-Generator
+	url = https://github.com//rdnetto/YCM-Generator
+[submodule "pack/plugins/start/vim-cpp-enhanced-highlight"]
+	path = pack/plugins/start/vim-cpp-enhanced-highlight
+	url = https://github.com/octol/vim-cpp-enhanced-highlight.git
+[submodule "pack/plugins/start/vim-airline-themes"]
+	path = pack/plugins/start/vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes

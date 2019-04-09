@@ -30,9 +30,15 @@ set nowrap
 colorscheme molokai
 let g:molokai_original=1
 
+" font
+set macligatures
+set guifont=Fira\ Code:h13
+
 "Toggle Menu and Toolbar
 set guioptions-=m
 set guioptions-=T
+set guioptions-=r
+set guioptions-=l
 
 "indent setting
 set tabstop=4
@@ -78,8 +84,8 @@ nmap <C-k> <C-w>k
 
 """""""""""""""""""""""""""" Plugin Setting Start From Here""""""""
 " airline
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled=1
+let g:airline_powerline_fonts=1
 set laststatus=2
 
 " tagbar
@@ -100,3 +106,13 @@ let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+
+" YouCompleteMe
+let g:ycm_max_diagnostics_to_display = 300
+
+" cpp enhanced highlight
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_decl_highlight = 1
+let g:cpp_experimental_simple_template_highlight = 1
+let g:cpp_experimental_template_highlight = 1
